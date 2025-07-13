@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+import os
+import re
+import sys
 from pathlib import Path
-import os, re, sys
 
 TAGS = [t.strip() for t in os.getenv("COMPLETED_TAGS", "").split(",") if t.strip()]
 if not TAGS:

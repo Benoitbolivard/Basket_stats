@@ -1,1 +1,1 @@
- 
+"""Computer vision package."""
