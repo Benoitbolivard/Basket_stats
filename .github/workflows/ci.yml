@@ -40,7 +40,7 @@ jobs:
 
     - name: Install dependencies
       if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --with dev,test
+      run: poetry install --with dev
 
     - name: Install pre-commit hooks
       run: |
