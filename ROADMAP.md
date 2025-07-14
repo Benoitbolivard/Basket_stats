@@ -1,8 +1,8 @@
 # Roadmap
 
 ## Phase 0 – Socle
-- [ ] <!--TASK:MONOREPO--> Initialisation du monorepo Poetry
-- [ ] <!--TASK:CI--> Mise en place qualite + CI
+- [x] <!--TASK:MONOREPO--> Initialisation du monorepo Poetry
+- [x] <!--TASK:CI--> Mise en place qualite + CI
 
 ## Phase 1 – Vision de base
 - [ ] <!--TASK:YOLO--> Detection YOLO + export JSON
