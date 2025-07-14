@@ -1,7 +1,8 @@
 """
-Minimal YOLOv8 detection CLI.
-Usage:
-    poetry run python -m vision.detect --source data/video.mp4 --output detections.json
+YOLOv8 detection CLI.
+Usage :
+    poetry run python -m vision.detect \
+        --source path/to/video.mp4 --output detections.json
 """
 from __future__ import annotations
 
@@ -13,7 +14,7 @@ from ultralytics import YOLO
 
 
 def run_detection(source: str | Path, output: str | Path) -> None:
-    model = YOLO("yolov8n.pt")  # tiny model (~6 Mo)
+    model = YOLO("yolov8n.pt")  # modèle léger
     results = model(source, save=False, stream=True)
 
     detections: list[dict] = []
@@ -28,13 +29,12 @@ def run_detection(source: str | Path, output: str | Path) -> None:
                 }
             )
 
-    with Path(output).open("w", encoding="utf-8") as f:
-        json.dump(detections, f, indent=2)
+    Path(output).write_text(json.dumps(detections, indent=2), encoding="utf-8")
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", required=True, help="video or image folder")
+    parser.add_argument("--source", required=True)
     parser.add_argument("--output", default="detections.json")
     args = parser.parse_args()
 
