@@ -14,12 +14,14 @@ python = "^3.11"
 fastapi = "^0.115.14"
 uvicorn = "^0.35.0"
 pydantic = "^2.5.0"
+python-multipart = "^0.0.6"
 sqlalchemy = "^2.0.23"
 alembic = "^1.13.1"
 psycopg2-binary = "^2.9.9"
 ultralytics = "^8.3.161"
 opencv-python = "^4.11.0.86"
-# numpy = "^1.25.2"  # Temporarily disabled for Windows build
+opencv-contrib-python = "^4.11.0.86"
+# numpy = "^1.24.0"  # Temporarily disabled for Windows build
 # pandas = "^2.1.4"  # Temporarily disabled for Windows build
 # opencv-python = "^4.8.1.78"  # Temporarily disabled for Windows build
 
