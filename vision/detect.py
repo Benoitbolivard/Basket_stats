@@ -1,7 +1,8 @@
 """
 Minimal YOLOv8 detection CLI.
 Usage:
-    poetry run python -m vision.detect --source data/video.mp4 --output detections.json
+    poetry run python -m vision.detect --source data/video.mp4 \\
+        --output detections.json
 """
 from __future__ import annotations
 
@@ -34,7 +35,9 @@ def run_detection(source: str | Path, output: str | Path) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--source", required=True, help="video or image folder")
+    parser.add_argument(
+        "--source", required=True, help="video or image folder"
+    )
     parser.add_argument("--output", default="detections.json")
     args = parser.parse_args()
 
